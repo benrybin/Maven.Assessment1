@@ -9,7 +9,11 @@ public class BasicStringUtils {
      * @return string with identical content, and the first character capitalized
      */
     public static String camelCase(String str) {
-        return null;
+
+        str = str.substring(0,1).toUpperCase() + str.substring(1);
+
+
+        return str;
     }
 
     /**
@@ -17,7 +21,12 @@ public class BasicStringUtils {
      * @return string with identical contents, in the reverse order
      */
     public static String reverse(String str) {
-        return null;
+
+         StringBuilder answer = new StringBuilder(str);
+         answer = answer.reverse();
+         str = answer.toString();
+
+        return str;
     }
 
     /**
@@ -25,7 +34,11 @@ public class BasicStringUtils {
      * @return string with identical contents, in reverse order, with first character capitalized
      */
     public static String reverseThenCamelCase(String str) {
-        return null;
+        StringBuilder answer = new StringBuilder(str);
+        answer = answer.reverse();
+        str = answer.toString();
+        str = str.substring(0,1).toUpperCase() + str.substring(1);
+        return str;
     }
 
 
@@ -34,7 +47,11 @@ public class BasicStringUtils {
      * @return string with identical contents excluding first and last character
      */
     public static String removeFirstAndLastCharacter(String str) {
-        return null;
+
+                str = str.substring(1,str.length()-1);
+
+
+        return str;
     }
 
     /**
@@ -42,6 +59,23 @@ public class BasicStringUtils {
      * @return string with identical characters, each with opposite casing
      */
     public static String invertCasing(String str) {
-        return null;
+
+        char[] strArray = str.toCharArray();
+        for (int i = 0; i < strArray.length; i++) {
+
+            char check = strArray[i];
+            if(Character.isUpperCase(check)){
+                strArray[i] = Character.toLowerCase(check);
+
+            }else if(Character.isLowerCase(check)){
+                strArray[i] = Character.toUpperCase(check);
+
+            }
+
+
+        }
+        String answer = new String(strArray);
+
+        return answer;
     }
 }
