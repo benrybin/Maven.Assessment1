@@ -1,10 +1,8 @@
 package com.zipcodewilmington.assessment1.part2;
-import java.sql.SQLOutput;
-import java.util.*;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Arrays;
 
+import java.util.stream.Stream;
+import java.util.*;
+import java.io.*;
 /**
  * Created by leon on 2/16/18.
  */
@@ -37,19 +35,16 @@ public class ArrayUtils {
      * Given an array of objects, name `objectArray`, and an object `objectToRemove`, return an array of objects with identical contents excluding `objectToRemove`
      */
     public static Object[] removeValue(Object[] objectArray, Object objectToRemove) {
-
-        Object[] answer = new Object[8];
-        int counter =0;
-        for (int i = 0; i <objectArray.length ; i++) {
+        List<Object> list = new ArrayList<>(Arrays.asList(objectArray)) ;
 
 
-            if (!objectArray[i].equals(objectToRemove)) {
-                Object hold = objectArray[i];
-                answer[counter]= hold;
-                counter++;
+        int i = (Integer) objectToRemove;
+        System.out.println(i);
+        list.removeAll(Collections.singleton(i));
 
-            }
-        }
+        Integer[] answer = new Integer[list.size()];
+
+        list.toArray(answer);
 
         return answer;
 
@@ -127,6 +122,13 @@ public class ArrayUtils {
      * given two arrays `objectArray` and `objectArrayToAdd`, return an array containing all elements in `objectArray` and `objectArrayToAdd`
      */
     public static Object[] mergeArrays(Object[] objectArray, Object[] objectArrayToAdd) {
-        return null;
+
+        List<Object> list = new ArrayList<>(Arrays.asList(objectArray)) ;
+        Collections.addAll(list,objectArrayToAdd);
+        Integer[] answer = new Integer[list.size()];
+
+        list.toArray(answer);
+        return answer;
+
     }
 }

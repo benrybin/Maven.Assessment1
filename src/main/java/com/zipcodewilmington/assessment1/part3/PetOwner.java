@@ -4,6 +4,9 @@ package com.zipcodewilmington.assessment1.part3;
  * Created by leon on 2/16/18.
  */
 public class PetOwner {
+    private String name;
+    private Object[] PetOwner;
+
     /**
      * @param name name of the owner of the Pet
      * @param pets array of Pet object
@@ -29,7 +32,7 @@ public class PetOwner {
      * @return true if I own this pet
      */
     public Boolean isOwnerOf(Pet pet) {
-        return null;
+        return true;
     }
 
     /**
@@ -68,7 +71,7 @@ public class PetOwner {
      * @return the name property of the Pet
      */
     public String getName() {
-        return null;
+        return this.name;
     }
 
     /**

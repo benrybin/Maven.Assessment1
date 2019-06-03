@@ -4,14 +4,18 @@ package com.zipcodewilmington.assessment1.part3;
  * Created by leon on 2/16/18.
  */
 public class Cat extends Pet {
+    private String name;
+    private int age;
+
+
     /**
      * @param name name of this Cat
      * @param age age of this Cat
      */
     public Cat(String name, Integer age) {
 
-        String expectedName = "Name of Cat";
-        Integer expectedAge = Integer.MAX_VALUE;
+        this.name = name;
+        this.age = age;
 
     }
 
@@ -20,14 +24,14 @@ public class Cat extends Pet {
      */
     public Cat(Integer age) {
 
-        age = getAge();
+        age = 0;
     }
 
     /**
      * @param name name of this Cat
      */
     public Cat(String name) {
-        name = getName();
+        this.name = name;
 
     }
 
@@ -38,8 +42,9 @@ public class Cat extends Pet {
      * age is 0
      */
     public Cat() {
-        String name = "Name of Cat";
-        Integer age = Integer.MAX_VALUE;
+
+        name = "Cat name";
+        age = 0;
     }
 
     /**
