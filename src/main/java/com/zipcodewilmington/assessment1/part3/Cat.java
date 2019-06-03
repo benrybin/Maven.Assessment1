@@ -10,18 +10,24 @@ public class Cat extends Pet {
      */
     public Cat(String name, Integer age) {
 
+        String expectedName = "Name of Cat";
+        Integer expectedAge = Integer.MAX_VALUE;
+
     }
 
     /**
      * @param age age of this Cat
      */
     public Cat(Integer age) {
+
+        age = getAge();
     }
 
     /**
      * @param name name of this Cat
      */
     public Cat(String name) {
+        name = getName();
 
     }
 
@@ -32,12 +38,14 @@ public class Cat extends Pet {
      * age is 0
      */
     public Cat() {
+        String name = "Name of Cat";
+        Integer age = Integer.MAX_VALUE;
     }
 
     /**
      * @return meow as a string
      */
     public String speak() {
-        return null;
+        return "Meow";
     }
 }
